@@ -10,4 +10,8 @@ export const sassPaths = {
   dest: `${dirs.dest}/css/` //生成css文件的路径
 }
 
+/* 管理gulp模块 */
 export const $ = require('gulp-load-plugins')();
+
+/* Browsersync模块 */
+export const browserSync = require('browser-sync').create();
