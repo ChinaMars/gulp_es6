@@ -1,6 +1,6 @@
 import gulp from 'gulp';
 import sass from 'gulp-sass';
-import {sassPaths,$} from './const';
+import {sassPaths,$,reload} from './const';
 
 export default () => {
   return gulp.src(sassPaths.mainFile)
@@ -12,7 +12,8 @@ export default () => {
       browsers: ['last 50 versions'],
       cascade: false
     }))
-
     .pipe(gulp.dest(sassPaths.dest))
+
+    .pipe(reload({stream:true}))
 }
 
