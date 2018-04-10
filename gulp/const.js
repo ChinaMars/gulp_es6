@@ -1,7 +1,7 @@
 /*主目录修改和生成的路径*/
 export const dirs = {
   src: 'src', //主目录路径
-  dest: 'www' //编译生成的路径
+  dest: 'assets' //编译生成的路径
 }
 /* css文件修改和生成的路径 */
 export const sassPaths = {
