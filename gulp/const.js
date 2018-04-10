@@ -5,9 +5,15 @@ export const dirs = {
 }
 /* css文件修改和生成的路径 */
 export const sassPaths = {
-  src: `${dirs.src}/**/*.scss`, //主目录下css文件的路径
-  mainFile: `${dirs.src}/theme/styles.scss`, //引入所有css的文件
+  src: `${dirs.src}/sass/`, //主目录下css文件的路径
+  mainFile: `${dirs.src}/sass/styles.scss`, //引入所有css的文件
   dest: `${dirs.dest}/css/` //编译生成css文件的路径
+}
+/*js文件修改和生成的路径*/
+export const jsPaths = {
+  src: `${dirs.src}/js/`, //主目录下css文件的路径
+  mainFile: `${dirs.src}/js/styles.scss`, //引入所有css的文件
+  dest: `${dirs.dest}/js/` //编译生成css文件的路径
 }
 
 /* 管理gulp模块 */
