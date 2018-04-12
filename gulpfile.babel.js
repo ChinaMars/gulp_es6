@@ -14,6 +14,7 @@ gulp.task('browserSync',['assets'],browserSyncServe);
 
 gulp.task('assets',[
   'styles',
+  'scripts'
 ]);
 
 gulp.task('watch',['browserSync'],watch);
