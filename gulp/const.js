@@ -16,7 +16,7 @@ export const jsPaths = {
   dest: `${dirs.dest}/js/` //编译生成js文件的路径
 }
 
-/* 管理gulp模块 */
+/* 管理所有gulp模块 */
 export const $ = require('gulp-load-plugins')();
 
 /* Browsersync模块 */

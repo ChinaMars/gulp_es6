@@ -18,9 +18,6 @@ export default () => {
     //保存没有压缩过的css文件
     .pipe(gulp.dest(sassPaths.dest))
 
-    //css发生变化时发送给Browser-sync实现更新
-    .pipe(reload({stream:true}))
-
     //压缩css文件
     .pipe($.cssnano())
 
@@ -29,10 +26,13 @@ export default () => {
       suffix: ".min"
     }))
 
-    //写入 sourcemap
+    //保存 sourcemap
     .pipe($.sourcemaps.write('./'))
 
     //保存压缩后的css文件
-    .pipe(gulp.dest(sassPaths.dest));
+    .pipe(gulp.dest(sassPaths.dest))
+
+    //css发生变化时发送给Browser-sync实现更新
+    .pipe(reload({stream:true}));
 }
 

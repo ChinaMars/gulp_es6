@@ -1,2 +1,4 @@
 import $ from 'jquery';
-$('#text').addClass('abc');
+export default () => {
+  $('#text').addClass('es6');
+}
