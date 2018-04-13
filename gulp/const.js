@@ -12,7 +12,7 @@ export const sassPaths = {
 /*js文件修改和生成的路径*/
 export const jsPaths = {
   src: `${dirs.src}/js/`, //主目录下js文件的路径
-  mainFile: `${dirs.src}/js/bundle/*.js`, //引入所有页面上的js文件
+  mainFile: `${dirs.src}/js/pages/*.js`, //引入所有页面上的js文件
   dest: `${dirs.dest}/js/` //编译生成js文件的路径
 }
 
