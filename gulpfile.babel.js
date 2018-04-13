@@ -17,4 +17,4 @@ gulp.task('assets',[
   'scripts'
 ]);
 
-gulp.task('watch',['browserSync'],watch);
+gulp.task('watch',['assets','browserSync'],watch);
