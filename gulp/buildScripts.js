@@ -1,9 +1,9 @@
 import gulp from 'gulp';
-import browserify from 'browserify';
-import source from 'vinyl-source-stream';
-import buffer from 'vinyl-buffer';
+import browserify from 'browserify'; //供浏览器环境使用的模块打包工具
+import source from 'vinyl-source-stream'; //用于将browserify的bundle()的输出转换为gulp可用的vinyl（一种虚拟文件格式）流
+import buffer from 'vinyl-buffer'; //用于将vinyl流转化为buffered vinyl文件（gulp-sourcemaps及大部分Gulp插件都需要这种格式）
 import babelify from 'babelify';
-import merge from 'merge-stream';
+import merge from 'merge-stream'; //将多个stream合成一个
 import glob from 'glob';
 import watchify from 'watchify';
 import path from 'path';
@@ -18,9 +18,9 @@ export default () => {
       debug: true,
       plugin: [watchify],
       transform: [babelify.configure({presets: ["es2015"]})]
-    };
+    };//browserify配置
 
-    let b = browserify(props);
+    let b = browserify(props); //开始browserify
 
     function rebundle () {
       let stream = b.bundle();
