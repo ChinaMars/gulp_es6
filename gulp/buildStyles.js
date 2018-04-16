@@ -1,5 +1,4 @@
 import gulp from 'gulp';
-import sass from 'gulp-sass';
 import {sassPaths,$,reload} from './const';
 
 export default () => {
@@ -8,7 +7,7 @@ export default () => {
     .pipe($.sourcemaps.init())
 
     //运行gulp sass
-    .pipe($.sass().on('error', sass.logError))
+    .pipe($.sass.sync().on('error', $.sass.logError))
 
     //添加浏览器前缀写法
     .pipe($.autoprefixer({

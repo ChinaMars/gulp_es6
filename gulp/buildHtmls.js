@@ -1,8 +1,9 @@
 import gulp from 'gulp';
-import {htmlPaths,$} from './const'
+import {htmlPaths,browserSync,$} from './const'
 
 export default () => {
   return gulp.src(htmlPaths.mainFile)
     .pipe($.htmlmin({collapseWhitespace: true}))
-    .pipe(gulp.dest(htmlPaths.dest));
+    .pipe(gulp.dest(htmlPaths.dest))
+    .pipe(browserSync.stream());
 }
