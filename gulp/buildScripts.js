@@ -10,7 +10,7 @@ import path from 'path';
 import { jsPaths, $, reload } from './const'
 
 export default () => {
-  let files = glob.sync(jsPaths.mainFile);
+  let files = glob.sync(jsPaths.mainFile); //同步获取主要的js
 
   return merge(files.map(function(file) {
     let props = {
@@ -29,13 +29,13 @@ export default () => {
         .pipe(gulp.dest(jsPaths.dest))
         .pipe(buffer())
         .pipe($.sourcemaps.init({loadMaps: true}))
-        .pipe($.uglify())
+        .pipe($.uglify()) //压缩js
         .pipe($.rename({
           suffix: ".min"
         }))
         .pipe($.sourcemaps.write('./'))
         .pipe(gulp.dest(jsPaths.dest))
-        .pipe(reload({stream:true}));
+        .pipe(reload({stream:true}));//js发生变化时发送给Browser-sync实现更新
     }
 
     b.on('update', function () {
